@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add your inline styles here */
+    </style>
+</head>
+<body>
+    <header>
+        
+        <nav class="sticky-header">
+            <h1>My Portfolio</h1>
+            <button class="nav-toggle">Menu</button>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <section id="home">
+                <h2>Welcome to My Portfolio</h2>
+                <h3>RIZQI NURFADILAH</h3>
+                <p>+62895635583219 / rizqinurfadillah75@gmail.com / Kuningan, Jawa Barat, Indonesia</p>
+                <p>Lulusan SMA dengan jurusan Matematika dan Ilmu Pengetahuan Alam yang memiliki pengalaman organisasi pada bidang Robotik dan Kawiswara. Memiliki kemampuan yang berhubungan dengan desain, konstruksi, operasi, disposisi struktural, pembuatan dan aplikasi dari robotik serta memiliki kemampuan memainkan alat musik diantaranya drum dan angklung. Memiliki kemampuan kerja sama tim, manajemen waktu, mudah beradaptasi, dan komunikasi yang baik. Berdedikasi dan bermotivasi tinggi untuk dapat mengembangkan karier profesional.</p>
+            </section>
+            <section id="projects">
+                <h2>Pengalaman Organisasi</h2>
+                <article>
+                    <h3>Robotik</h3>
+                    <time datetime="2021-08">Agustus 2021 – Mei 2023</time>
+                    <ul>
+                        <li>Mempelajari ilmu pengetahuan dan keterampilan.</li>
+                        <li>Mempelajari konsep dasar Robotik.</li>
+                        <li>Memiliki kemampuan dalam perancangan robot yang canggih serta produktif.</li>
+                        <li>Menciptakan perancangan robot yang ramah lingkungan.</li>
+                        <li>Berkolaborasi dengan rekan tim untuk merancang, membangun, dan menguji robot-robot untuk berbagai kompetisi.</li>
+                        <li>Memimpin sesi pelatihan untuk anggota baru mengenai dasar-dasar teknis dan strategi untuk membuat robot.</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>Kawiswara</h3>
+                    <time datetime="2022-08">Agustus 2022 – Februari 2024</time>
+                    <ul>
+                        <li>Mempelajari teknik musik baru.</li>
+                        <li>Memberikan pelatihan intensif untuk meningkatkan keterampilan dalam memainkan instrumen tradisional dan modern.</li>
+                        <li>Berpartisipasi dalam penyusunan aransemen musik yang memadukan unsur tradisional dan kontemporer.</li>
+                        <li>Berkolaborasi dengan anggota tim untuk melengkapi pertunjukan.</li>
+                        <li>Memiliki pengalaman panggung dengan mengikuti berbagai pertunjukan musik dan kompetisi ditingkat kabupaten.</li>
+                        <li>Melibatkan diri dalam aspek operasional, koordinasi, dan pengorganisasian kegiatan tersebut.</li>
+                    </ul>
+                </article>
+            </section>
+            <section id="gallery">
+                <div class="slider">
+                    <button class="prev">Previous</button>
+                    <div class="slides">
+                        <img class="slide" src="./foto/saya2.jpg" alt="Sample Project Image 1">
+                        <img class="slide" src="./foto/saya3.JPG" alt="Sample Project Image 2">
+                        <img class="slide" src="./foto/saya4.JPG" alt="Sample Project Image 3">
+                    </div>
+                    <button class="next">Next</button>
+                </div>
+            </section>
+        </article>
+        <aside>
+            <aside>
+                <h3>About Me</h3>
+                <p>Short bio or information about yourself.</p>
+                <img src="./foto/saya.jpg" alt="Placeholder Image">
+            </aside>
+        </main>
+        <footer>
+            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+            <div id="contact" class="social-media">
+                <a href="https://github.com" target="_blank" ><img src="./foto/github.png" alt="github image">GitHub</a>
+                <a href="https://linkedin.com" target="_blank"><img src="./foto/linkedin.png" alt="linkedin image">LinkedIn</a>
+                <a href="https://twitter.com" target="_blank"><img src="./foto/x.png" alt="X image">X</a>
+                <a href="https://whatsapp.com" target="_blank"><img src="./foto/whatsapp.jfif" alt="whatsapp image">WhatsApp</a>
+            </div>
+        </footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const navToggle = document.querySelector('.nav-toggle');
+                const navMenu = document.querySelector('.nav-menu');
+    
+                navToggle.addEventListener('click', function () {
+                    navMenu.classList.toggle('is-active');
+                });
+            });
+    
+            let currentSlide = 0;
+    
+            document.addEventListener('DOMContentLoaded', function () {
+                const slides = document.querySelectorAll('.slide');
+                const nextButton = document.querySelector('.next');
+                const prevButton = document.querySelector('.prev');
+    
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        slide.style.display = (i === index) ? 'block' : 'none';
+                    });
+                }
+    
+                nextButton.addEventListener('click', function () {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    showSlide(currentSlide);
+                });
+    
+                prevButton.addEventListener('click', function () {
+                    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                    showSlide(currentSlide);
+                });
+    
+                showSlide(currentSlide);
+            });
+        </script>
+    </body>
+    </html>
